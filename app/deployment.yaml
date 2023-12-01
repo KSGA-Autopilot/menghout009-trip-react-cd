@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: menghout009-trip-react-deployment
+  labels:
+    app: menghout009-trip-react
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: menghout009-trip-react
+  template:
+    metadata:
+      labels:
+        app: menghout009-trip-react
+    spec:
+      containers:
+        - name: menghout009-trip-react
+          image: kshrdautopilot/menghout009-trip-react
+          ports:
+            - containerPort: 3000
