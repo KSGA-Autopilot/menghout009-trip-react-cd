@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: menghout009-trip-react
+spec:
+  destination:
+    name: ''
+    namespace: menghout009
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: app
+    repoURL: 'https://github.com/KSGA-Autopilot/menghout009-trip-react-cd'
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+project: default
+source:
+  repoURL: 'https://github.com/KSGA-Autopilot/menghout009-trip-react-cd'
+  path: app
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: menghout009
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
