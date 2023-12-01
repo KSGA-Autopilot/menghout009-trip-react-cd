@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: menghout009-trip-react
-          image: kshrdautopilot/menghout009-trip-react
+          image: kshrdautopilot/menghout009-trip-react:2023-12-01-06-41-56
           ports:
             - containerPort: 3000
