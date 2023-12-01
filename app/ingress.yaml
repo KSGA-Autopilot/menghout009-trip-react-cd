@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: menghout009-trip-react-ingress
+  namespace: menghout009
+spec:
+  tls:
+    - hosts:
+        - demo.auto-pilot.dev
+      secretName: demo-auto-pilot-dev-cert
+  rules:
+    - host: demo.auto-pilot.dev
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: menghout009-trip-react-svc
+                port:
+                  number: 3000
